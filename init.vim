@@ -17,7 +17,7 @@ set cursorline
 let mapleader = ' '
 
 " Plugs
-call plug#begin('~/AppData/Local/nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')  " Set your path here !!!!!!!!!!!!!!!!!
 
 Plug 'preservim/nerdtree' " NerdTree.
 Plug 'preservim/nerdcommenter' " NerdCommenter.
@@ -28,7 +28,6 @@ Plug 'ryanoasis/vim-devicons' " Developer Icons.
 Plug 'tc50cal/vim-terminal' " Vim Terminal.
 Plug 'preservim/tagbar' " Tagbar for code navigation.
 Plug 'terryma/vim-multiple-cursors' " CTRL + N for multiple cursors.
-Plug 'tomasr/molokai' " Molokai theme.
 Plug 'jiangmiao/auto-pairs' " Auto-pair parentheses, brackets, e.t.c. ...
 Plug 'norcalli/nvim-colorizer.lua' " Color highlighter for Neovim.
 Plug 'tpope/vim-surround' " Surrounding ysw)
@@ -36,7 +35,6 @@ Plug 'tpope/vim-surround' " Surrounding ysw)
 call plug#end()
 
 " Plug settings
-colorscheme molokai " Color scheme for Vim.
 
 "lua require 'colorizer'.setup() " Setup lua colorizer.
 
@@ -68,9 +66,12 @@ function! CheckBackspace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+" Keyboard Shortcuts
 inoremap <silent><expr> <Tab>
       \ coc#pum#visible() ? coc#pum#next(1) :
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+vnoremap <C-f> y<ESC>/<c-r>"<CR>
+vnoremap <C-h> "hy:%s/<C-r>h//gc<left><left><left>
