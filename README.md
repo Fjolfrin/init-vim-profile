@@ -7,6 +7,8 @@ All plugins and settings have been found from YouTube videos and various article
 I am on **Widnows 11**, and I use **Windows Terminal** for my neovim coding. I have tried the same stuff on WSL (Windows uUbsystem for Linux) and everything works fine.
 Also I have been using **scoop** as my package manager on Windows. Everything, including Python, is installed through scoop.
 
+**UPDATE:** I have switched from scoop to [`winget`](https://github.com/microsoft/winget-cli) which is now the default package manager for powershell. For windows this is a more straightforward and intuitive solution. It is very similar to `scoop` so in all commands just replace `scoop` with `winget`. 
+
 Below are links for:
 - [Windows Terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=el-gr&gl=gr)
 - [Scoop](https://scoop.sh/)
